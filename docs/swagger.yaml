@@ -1,0 +1,82 @@
+basePath: /
+definitions:
+  order.Order:
+    properties:
+      description:
+        example: Delivered
+        type: string
+      key:
+        example: 7e1efed0-e86a-4286-8c4a-a609751f9a0b
+        type: string
+      status:
+        example: 1
+        type: integer
+      updated:
+        example: "2022-04-17T12:25:43.511Z"
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Go API Redis
+  title: Go API Redis
+  version: "1.0"
+paths:
+  /order:
+    post:
+      description: Set order
+      parameters:
+      - description: Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/order.Order'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/order.Order'
+        "400":
+          description: error
+          schema:
+            type: string
+        "503":
+          description: error
+          schema:
+            type: string
+      summary: Set
+      tags:
+      - order
+  /order/{id}:
+    get:
+      description: Get order
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/order.Order'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
+      summary: Get
+      tags:
+      - order
+schemes:
+- http
+- https
+swagger: "2.0"
