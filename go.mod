@@ -29,6 +29,7 @@ require (
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/go-redis/redis/v8 v8.11.5
+	github.com/goccy/go-json v0.9.11
 	github.com/gofiber/swagger v0.1.0
 	github.com/klauspost/compress v1.15.9 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect

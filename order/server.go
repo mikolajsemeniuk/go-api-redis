@@ -2,8 +2,9 @@ package order
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
+
+	"github.com/goccy/go-json"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/gofiber/fiber/v2"
