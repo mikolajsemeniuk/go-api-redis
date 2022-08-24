@@ -1,10 +1,13 @@
 {
     "cSpell.words": [
         "autoload",
+        "cosmtrek",
         "envconfig",
+        "goccy",
         "godotenv",
         "gofiber",
         "joho",
-        "kelseyhightower"
+        "kelseyhightower",
+        "swaggo"
     ]
 }
