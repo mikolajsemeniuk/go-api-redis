@@ -59,6 +59,7 @@ func (t *Timestamp) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
+// Deprecated, remove later
 type Order struct {
 	Key         uuid.UUID   `json:"key"         example:"7e1efed0-e86a-4286-8c4a-a609751f9a0b"`
 	Description Description `json:"description" example:"Delivered"`

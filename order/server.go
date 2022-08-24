@@ -17,6 +17,7 @@ type server struct {
 }
 
 func (s *server) Route() {
+	// Deprecated, change later to post /get, /set
 	s.router.Get("/:id", s.get)
 	s.router.Post("/", s.set)
 }
@@ -32,6 +33,7 @@ func (s *server) Route() {
 // @Failure 503 {string} not found
 // @Router /order/{id} [get]
 func (s *server) get(c *fiber.Ctx) error {
+	// Deprecated, add go:generate to generate it on the fly
 	id, err := uuid.Parse(c.Params("id"))
 	if err != nil {
 		return c.Status(http.StatusBadRequest).SendString(err.Error())
@@ -58,6 +60,7 @@ func (s *server) get(c *fiber.Ctx) error {
 // @Failure 503 {string} string "error"
 // @Router /order [post]
 func (s *server) set(c *fiber.Ctx) error {
+	// Deprecated, add go:generate to generate it on the fly
 	var request Order
 	if err := json.Unmarshal(c.Body(), &request); err != nil {
 		return c.Status(http.StatusBadRequest).SendString(err.Error())
