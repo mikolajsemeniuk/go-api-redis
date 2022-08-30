@@ -14,6 +14,7 @@ type Description string
 
 func (d *Description) UnmarshalJSON(data []byte) error {
 	var value string
+
 	if err := json.Unmarshal(data, &value); err != nil {
 		return err
 	}
@@ -38,6 +39,7 @@ const (
 
 func (s *Status) UnmarshalJSON(data []byte) error {
 	var value uint
+
 	if err := json.Unmarshal(data, &value); err != nil {
 		return err
 	}
